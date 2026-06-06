@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=pythonpath_init
+X-Python-2-Compatible=false
+Name=PYTHONPATH Initializer
+Comment=Initializes PYTHONPATH for Python tools integration

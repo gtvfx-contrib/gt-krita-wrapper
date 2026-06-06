@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=pyinit_startup
+X-Python-2-Compatible=false
+Name=Python Initialization Startup Scripts
+Comment=Executes Python initialization scripts from PYINIT_STARTUP paths

@@ -1,0 +1,11 @@
+{
+    "environment": [
+        ["ENVOY_KRITA_BIN", "C:/Program Files/Krita (x64)/bin/krita.exe"],
+        ["+=ENVOY_KRITA_PLUGINPATH", "${__BUNDLE__}/plugins"],
+        ["+=ENVOY_KRITA_PYINIT_STARTUP", "${PYINIT_STARTUP}"]
+    ],
+    "environment_allowlist": [
+        "ENVOY_KRITA_PYTHONPATH",
+        "ENVOY_KRITA_PYINIT_STARTUP"
+    ]
+}

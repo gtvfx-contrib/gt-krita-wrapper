@@ -1,0 +1,10 @@
+{
+    "environment": [
+        ["+=PYTHONPATH", "${__BUNDLE__}/py"],
+        ["+=ENVOY_KRITA_PYTHONPATH", "${PYTHONPATH}"]
+    ],
+    "environment_allowlist": [
+        "ENVOY_KRITA_PYTHONPATH",
+        "ENVOY_KRITA_PYINIT_STARTUP"
+    ]
+}
