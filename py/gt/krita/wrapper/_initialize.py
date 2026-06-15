@@ -95,18 +95,13 @@ def appendKritaPyinitStartup(startup_path: str) -> None:
 
 
 def preservePyinitStartup() -> None:
-    """Preserve original PYINIT_STARTUP paths before bl resolution changes them.
-    
-    The bl package system resolves workspace paths (e.g., Z:/repo/...) to
-    installed package paths (e.g., C:/bl/pkgs/...). This causes PYINIT_STARTUP
-    to point to package directories instead of the workspace, which breaks
-    development workflows where startup scripts need to run from workspace.
-    
+    """Preserve original PYINIT_STARTUP paths before environment resolution changes them.
+        
     This function captures the original PYINIT_STARTUP value and stores it in
     ENVOY_KRITA_PYINIT_STARTUP for use by Krita plugins.
     
     Note:
-        This function must be called early in __main__.py before bl package
+        This function must be called early in __main__.py before environment
         resolution occurs.
     
     Environment Variables:
