@@ -21,7 +21,7 @@ import logging
 
 import envoy
 
-from . import _initialize as krita
+from . import _initialize as krita_init
 
 
 log = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ def main() -> None:
     """Execute the Krita wrapper initialization and launch sequence."""
     # Resolve the executable path
     krita_exe = (
-        Path(krita.KRITA_ENV.get("ENVOY_KRITA_BIN", ""))
+        Path(krita_init.KRITA_ENV.get("ENVOY_KRITA_BIN", ""))
     )
 
     if not krita_exe.is_file():
@@ -39,21 +39,22 @@ def main() -> None:
         raise RuntimeError("Unable to find application...")
     
     # Preserve PYINIT_STARTUP early, before environment resolution changes it
-    krita.preservePyinitStartup()
+    krita_init.preservePyinitStartup()
 
     # Manage Krita plugins
-    krita.manageKritaPlugins()
+    krita_init.manageKritaPlugins()
 
     # Ensure T2 plugins are enabled in kritarc
-    krita.ensurePluginsEnabled()
+    krita_init.ensurePluginsEnabled()
 
     # Launch Krita inside the krita envoy environment, streaming its
     # stdout and stderr to the terminal in real-time.
     import threading
 
-    proc = envoy.proc.spawn(
-        [str(krita_exe)],
-        env_override='krita',
+    krita_env = envoy.proc.Environment(str(krita_exe), env_override='krita_app')
+    # built_env = ue_env.build()
+
+    proc = krita_env.spawn(
         stdout=envoy.proc.PIPE,
         stderr=envoy.proc.PIPE,
         creationflags=0,  # override envoy's CREATE_NO_WINDOW so output flows through

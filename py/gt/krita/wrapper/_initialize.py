@@ -32,7 +32,7 @@ from gt.pycore import robocopy, rmdir, getTimecodeVersion
 
 log = logging.getLogger(__name__)
 
-KRITA_ENV = envoy.get_environment("krita")
+KRITA_ENV = envoy.getEnvironment("krita_app")
 PYKRITA_DIR = Path(os.getenv("APPDATA", "")) / "krita" / "pykrita"
 KRITARC_PATH = Path(os.getenv("LOCALAPPDATA", "")) / "kritarc"
 MANAGED_PLUGINS_MANIFEST = PYKRITA_DIR / ".envoy_managed_plugins.json"

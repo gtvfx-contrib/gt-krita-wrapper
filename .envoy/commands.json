@@ -1,9 +1,15 @@
 {
     "krita": {
         "environment": [
+            "python"
+        ],
+        "alias": ["python", "-m", "gt.krita.wrapper"]
+    },
+    "krita_app": {
+        "environment": [
             "python",
             "krita_env.json"
         ],
-        "alias": ["python", "-m", "gt.krita.wrapper"]
+        "alias": ["python", "-m", "gt.krita.wrapper.app"]
     }
 }

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "creative",
+      "name": "Creative",
+      "order": 10
+    }
+  ],
+  "applications": [
+    {
+      "id": "krita",
+      "name": "Krita",
+      "command": "krita",
+      "args": [],
+      "description": "Digital painting application",
+      "icon": "krita-logo-dark.svg",
+      "group": "creative",
+      "keywords": ["paint", "image", "digital", "art", "krita"],
+      "platforms": ["windows"],
+      "inTerminal": false
+    }
+  ]
+}
